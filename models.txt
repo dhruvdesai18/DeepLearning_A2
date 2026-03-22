@@ -1,0 +1,11 @@
+Rank 1
+Config: kernels=[64, 128, 256], dropout=0.0, lambda=0.5, lr=0.001, latent_size=10
+Final Test Loss: 229.24
+
+Rank 2
+Config: kernels=[64, 128, 256], dropout=0.0, lambda=0.5, lr=0.0005, latent_size=10
+Final Test Loss: 229.79
+
+Rank 3
+Config: kernels=[32, 64, 128], dropout=0.0, lambda=0.5, lr=0.001, latent_size=10
+Final Test Loss: 230.41
