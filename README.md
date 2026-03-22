@@ -15,12 +15,12 @@ The notebook explores:
 
 ## Repository Contents
 
-- `A2_VAE.ipynb` — main Jupyter notebook containing the full implementation, experiments, visualisations, and discussion
-- `Variational Auto Encoders.pdf` — supporting theory notes and short written explanations for the assignment
-- `models.txt` — saved comparison results for tested model configurations
-- `vae_model-best.pt` — best model weights
-- `vae_history-best.pt` — saved training history of the best model
-- `data/FashionMNIST/raw/` — dataset files
+- `A2_VAE.ipynb` - main Jupyter notebook containing the full implementation, experiments, visualisations, and discussion
+- `Variational Auto Encoders.pdf` - supporting theory notes and short written explanations for the assignment
+- `models.txt` - saved comparison results for tested model configurations
+- `vae_model-best.pt` - best model weights
+- `vae_history-best.pt` - saved training history of the best model
+- `data/FashionMNIST/raw/` - dataset files
 
 ## Project Objective
 
@@ -52,16 +52,18 @@ The decoder reconstructs the image from a sampled latent vector using:
 - sigmoid output activation
 
 ### Reparameterisation Trick
+## Reparameterisation Trick
+
 Instead of directly sampling from the latent distribution, the VAE uses:
 
-\[
-z = \mu + \sigma \cdot \epsilon
-\]
+z = μ + σ · ε
 
 where:
-- `\mu` is the latent mean
-- `\sigma` is derived from `log_var`
-- `\epsilon ~ N(0,1)`
+- μ is the latent mean  
+- σ = exp(0.5 * log_var)  
+- ε ~ N(0, 1)
+
+This allows stochastic sampling while keeping training differentiable.
 
 This allows stochastic sampling while keeping training differentiable.
 
@@ -69,17 +71,15 @@ This allows stochastic sampling while keeping training differentiable.
 
 The VAE is trained using two loss components:
 
-### 1. Reconstruction Loss
+1. Reconstruction Loss  
 Measures how close the reconstructed image is to the original input.
 
-### 2. KL Divergence Loss
-Regularises the latent distribution so that it stays close to a standard normal prior.
+2. KL Divergence Loss  
+Regularises the latent distribution so it stays close to a standard normal prior.
 
-Overall loss:
+Total loss:
 
-\[
-\text{Loss} = \text{Reconstruction Loss} + \lambda \times \text{KL Loss}
-\]
+Loss = Reconstruction Loss + λ × KL Loss
 
 where `λ` controls the balance between reconstruction fidelity and latent-space regularisation.
 
