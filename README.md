@@ -121,3 +121,37 @@ It achieved the **lowest final test loss of 229.01**.
    ```bash
    git clone <your-repo-link>
    cd DeepLearning_A2
+
+2. Install dependencies
+   ```bash
+   pip install torch torchvision matplotlib numpy jupyter
+   
+3. Launch the notebook
+   ```bash
+   jupyter notebook A2_VAE.ipynb
+
+4. Run all cells in order
+
+
+
+## Requirements
+
+Recommended environment:
+
+Python 3.10+
+PyTorch
+torchvision
+NumPy
+Matplotlib
+Jupyter Notebook
+Notes
+The notebook contains the full code, outputs, model comparison, and conclusions.
+Saved model and history files are included for reproducibility.
+The PDF file contains theory notes and short explanations related to the assignment.
+
+
+## Author
+
+Deep Learning Assignment 2
+Variational Autoencoder on FashionMNIST
+
